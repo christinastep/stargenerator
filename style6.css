@@ -16,21 +16,18 @@
 
 
 body{
-  height:100vh;
   width:100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height:120vh;
   margin:0;
   padding: 0;
   background-color: #000;
-  overflow: hidden;
 }
 
 canvas{
   height:100vh;
   width:100vw;
   background-color: #000000;
+  position: fixed;
 }
 
 .wrapper,.output{
@@ -45,13 +42,14 @@ canvas{
   font-weight: 300;
   margin-bottom: 20px;
   transform-origin: center; 
-  position: absolute;
+  position: fixed;
   height:100vh;
   width:80vw;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction:column;
+  z-index: 10;
 }
 
 textarea,p{
@@ -63,6 +61,16 @@ textarea,p{
   margin: 0;
   line-height: 5vw;
 }
+@media (max-width: 599px) {
+  textarea,p{
+    font-size: 10vw;
+    line-height: 10vw;
+  }
+  .intro{
+    width:90%;
+  }
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: yellow;
   opacity: 1; /* Firefox */
@@ -100,7 +108,75 @@ button{
   border-radius:5px;
   font-family: 'Teko', sans-serif;
   font-size: 25px;
-  position: absolute;
-  bottom:2vw;
-  right:2vw;
+  cursor: pointer;
+  
 }
+
+
+.intro{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition:all 0.5s;
+}
+
+.button--start{
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50vw;
+}
+
+.download{
+  border-radius: 50vw;
+}
+
+footer{
+  position: fixed;
+  z-index: 3;
+  transition:all 0.5s;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  top:2vw;
+  left:2vw;
+  right:2vw;
+  height:100vh;
+  transform: translateY(100vh);
+  transition: all 0.3s;
+}
+
+.footer__options button{
+  width:50px;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+button svg{
+  width:90%;
+}
+.footer__options button:hover span{
+  display: block;
+}
+
+.footer__options span{
+  position: absolute;
+  left:125%;
+  background-color: #fff;
+  font-size: 20px;
+  width: 120px;
+  display: inline-block;
+  border-radius: 5px;
+  top:0;
+  display: none;
+}
+
