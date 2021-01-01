@@ -122,7 +122,7 @@ buttonReload.addEventListener("click",function(){
 
 buttonDownload.addEventListener("click",function(){
   console.log("click");
-  var node = document.querySelector('.wrapper');
+  var node = document.querySelector('.output');
 
   domtoimage.toPng(node, { 
     height: node.offsetHeight * 2,

@@ -36,6 +36,11 @@ canvas{
   align-items: center;
 }
 
+.output{
+  height:100vh;
+  width:100vw;
+}
+
 
 .box__text{
   text-transform: uppercase;
@@ -123,6 +128,7 @@ button{
   justify-content: center;
   align-items: center;
   transition:all 0.5s;
+  z-index: 1;
 }
 
 .button--start{
